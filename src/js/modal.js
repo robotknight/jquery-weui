@@ -34,17 +34,11 @@
 
     mask.show();
     dialog.show();
-    mask.addClass("weui_mask_visible");
-    dialog.addClass("weui_dialog_visible");
   };
 
   $.closeModal = function() {
-    $(".weui_mask_visible").removeClass("weui_mask_visible").transitionEnd(function() {
-      $(this).remove();
-    });
-    $(".weui_dialog_visible").removeClass("weui_dialog_visible").transitionEnd(function() {
-      $(this).remove();
-    });
+    $(".weui_mask_visible").remove();
+    $(".weui_dialog_visible").remove();
   };
 
   $.alert = function(text, title, callback) {
